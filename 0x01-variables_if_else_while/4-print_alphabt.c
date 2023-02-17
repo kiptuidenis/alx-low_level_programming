@@ -11,7 +11,7 @@ int main(void)
 {
 	int i = 0;
 	char alphabet[26] = {'a', 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j',
-			     'k', 'l', 'm', 'n', 'o', 'q', 'r', 's', 't'
+			     'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't'
 			     , 'u', 'v', 'w', 'x', 'y', 'z'};
 	for (i = 0; i <= 25; i++)
 	{
