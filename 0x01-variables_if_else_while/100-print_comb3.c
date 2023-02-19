@@ -21,6 +21,7 @@ int main(void)
 			if (i < 8)
 			{
 				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
