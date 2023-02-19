@@ -10,12 +10,11 @@ int main(void)
 {
 	int num_comb3[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 	int i = 0;
+	int j;
 
 	for (i = 0; i <= 9; i++)
 	{
-		int j = i + 1;
-
-		for (j; j <= 9; j++)
+		for (j = i + 1; j <= 9; j++)
 		{
 			putchar(num_comb3[i] + '0');
 			putchar(num_comb3[j] + '0');
