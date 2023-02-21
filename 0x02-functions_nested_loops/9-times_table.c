@@ -14,12 +14,14 @@ void times_table(void)
 
 	for (i = 0; i <= 9; i++)
 	{
+		int num = 0;
+
 		tmp = tmp * i;
 
 		for (j = 0; j <= 8; j++)
 		{
-			tmp = tmp * j;
-			printf("%d", tmp);
+			num = tmp * j;
+			printf("%d", num);
 
 			if (j < 8)
 			{
