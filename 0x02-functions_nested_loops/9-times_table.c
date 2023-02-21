@@ -20,7 +20,7 @@ void times_table(void)
 			num = i * j;
 			printf("%d", num);
 
-			if (j < 8)
+			if (j < 9)
 			{
 				putchar(',');
 				putchar(' ');
