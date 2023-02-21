@@ -8,27 +8,18 @@
 
 void times_table(void)
 {
-	int tmp = 0;
+	int tmp = 1;
 	int i;
 	int j;
 
 	for (i = 0; i <= 9; i++)
 	{
-		int num = 0;
-		int num2;
-
-		printf("%d", num);
-		putchar(',');
-		putchar(' ');
+		tmp = tmp * i;
 
 		for (j = 0; j <= 8; j++)
 		{
-			if (i != 0)
-				tmp++;
-
-			num2 = num + tmp;
-
-			printf("%d", num2);
+			tmp = tmp * j;
+			printf("%d", tmp);
 
 			if (j < 8)
 			{
