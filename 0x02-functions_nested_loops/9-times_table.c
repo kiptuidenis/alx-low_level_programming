@@ -23,9 +23,9 @@ void times_table(void)
 
 		for (j = 0; j <= 8; j++)
 		{
-			if (i != )
+			if (i != 0)
 				tmp++;
-			
+
 			num2 = num + tmp;
 
 			printf("%d", num2);
