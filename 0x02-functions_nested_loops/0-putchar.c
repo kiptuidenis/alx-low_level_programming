@@ -13,7 +13,7 @@ int main(void)
 	char name[8] = {'_', 'p', 'u', 't', 'c', 'h', 'a', 'r'};
 	int i = 0;
 
-	while (i <= 8)
+	while (i <= 7)
 	{
 		putchar(name[i]);
 		i++;
