@@ -20,14 +20,13 @@ void times_table(void)
 			num = i * j;
 			printf("%d", num);
 
-			if (num < 10)
-			{
-				putchar(' ');
-			}
-
 			if (j < 9)
 			{
 				putchar(',');
+				if (num < 10)
+				{
+					putchar(' ');
+				}
 				putchar(' ');
 			}
 		}
