@@ -11,7 +11,7 @@
 
 int _islower(int c)
 {
-	int tmp = c + '0';
+	int tmp = c;
 
 	if (tmp >= 97 && tmp <= 122)
 	{
