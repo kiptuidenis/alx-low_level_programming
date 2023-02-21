@@ -23,6 +23,9 @@ void times_table(void)
 
 		for (j = 0; j <= 8; j++)
 		{
+			if (i != )
+				tmp++;
+			
 			num2 = num + tmp;
 
 			printf("%d", num2);
@@ -32,13 +35,8 @@ void times_table(void)
 				putchar(',');
 				putchar(' ');
 			}
-
-			if (i != 0)
-				tmp = tmp + 1;
 		}
 
 		putchar('\n');
-
-		tmp = tmp + 1;
 	}
 }
