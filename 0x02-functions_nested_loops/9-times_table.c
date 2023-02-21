@@ -6,7 +6,7 @@
  *times_table - prints timetable
  */
 
-void times_table(void);
+void times_table(void)
 {
 	int tmp = 0;
 	int i;
