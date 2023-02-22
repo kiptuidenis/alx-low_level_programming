@@ -16,19 +16,16 @@ int print_sign(int n)
 	if (tmp > 0)
 	{
 		printf("+1");
-		return (1);
 	}
 
 	if (tmp == 0)
 	{
 		printf("0");
-		return (0);
 	}
 
 	if (tmp < 0)
 	{
 		printf("-1");
-		return (-1);
 	}
 
 	return (5);
