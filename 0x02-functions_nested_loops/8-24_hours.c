@@ -1,33 +1,33 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include "main.h"
 
 /**
- *times_table - prints timetable
+ *jack_bauer - prints all minutes of the day
  */
 
 void jack_bauer(void)
 {
-	int i;
-	int j;
-	int k;
-	int l;
+	int hours;
+	int minute;
 
-	for (i = 0; i <= 2; i++)
+	for (hours = 0; hours <= 23; hours++)
 	{
-		for (j = 0; j <=9 ; j++)
+		for (minute = 0; minute <= 59; minute++)
 		{
-			for (k = 0; k <= 5; k++)
-			{
-				for (l = 0; l <= 9; j++)
-				{
-					printf("%d", i);
-					printf("%d", j);
-					printf(":");
-					printf("%d", k);
-					printf("%d\n", l);
-				}
-			}
+			int hour_tens = hours / 10;
+			int hour_ones = hours % 10;
+
+			int min_tens = minute / 10;
+			int min_ones = minute % 10;
+
+			_putchar(hour_tens + '0');
+			_putchar(hour_ones + '0');
+			_putchar(':');
+			_putchar(min_tens + '0');
+			_putchar(min_ones + '0');
+			_putchar('\n');
 		}
 	}
 }
