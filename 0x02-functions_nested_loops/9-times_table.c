@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include "main.h"
 
 /**
  *times_table - prints timetable
@@ -22,7 +23,7 @@ void times_table(void)
 			{
 				_putchar('0');
 			}
-			if (product < 10)
+			else if (product < 10)
 			{
 				_putchar(',');
 				_putchar(' ');
