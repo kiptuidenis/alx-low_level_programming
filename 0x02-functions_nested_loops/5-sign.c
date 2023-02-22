@@ -15,7 +15,7 @@ int print_sign(int n)
 
 	if (tmp > 0)
 	{
-		printf("+1");
+		printf("+%d", return(1));
 	}
 
 	if (tmp == 0)
