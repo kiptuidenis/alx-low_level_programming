@@ -19,7 +19,7 @@ int print_last_digit(int n)
 
 	last_digit = n % 10;
 
-	putchar(last_digit + '0');
+	printf("%d\n", last_digit);
 
 	return (last_digit);
 }
