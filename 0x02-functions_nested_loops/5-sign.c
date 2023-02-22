@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <time.h>
+#include "main.h"
 
 /**
  *print_sign - checks sign of argument passed
