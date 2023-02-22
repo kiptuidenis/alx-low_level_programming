@@ -10,4 +10,5 @@ void times_table(void);
 void jack_bauer(void);
 int _abs(int n);
 int print_last_digit(int n);
+int _putchar(char c);
 void print_alphabet_x10(void);
