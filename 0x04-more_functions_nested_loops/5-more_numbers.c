@@ -20,6 +20,7 @@ void more_numbers(void)
 		for (j = 0; j <= 19)
 		{
 			_putchar(numb[j]);
+			_putchar('');
 		}
 
 		_putchar('\n');
