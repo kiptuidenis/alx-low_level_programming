@@ -50,5 +50,6 @@ int largest_number(int a, int b, int c)
 		return (largest);
 	}
 	else
-		return (a);
+		largest = a;
+		return (largest);
 }
