@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include "main.h"
 
 /**
  *more_numbers - prints 0-14 10x
