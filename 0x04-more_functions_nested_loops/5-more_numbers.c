@@ -9,7 +9,7 @@
 
 void more_numbers(void)
 {
-	int numb[20] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 0, 1, 1, 1, 2, 1, 3,
+	char numb[20] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 0, 1, 1, 1, 2, 1, 3,
 			1, 4};
 	int i;
 	int j;
@@ -18,7 +18,7 @@ void more_numbers(void)
 	{
 		for (j = 0; j <= 19)
 		{
-			_putchar(numb[j] + '0');
+			_putchar(numb[j]);
 		}
 
 		_putchar('\n');
