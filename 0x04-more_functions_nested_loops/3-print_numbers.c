@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include "main.h"
 
 /**
  *print_numbers - print numbers 0-9
