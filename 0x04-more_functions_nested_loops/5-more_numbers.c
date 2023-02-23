@@ -9,18 +9,19 @@
 
 void more_numbers(void)
 {
-	char numb[20] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-			 '1', '0', '1', '1', '1', '2', '1', '3',
-			'1', '4'};
 	int i;
 	int j;
 
-	for (i = 0; i <= 9; i++)
+	for (j = 0; j < 10; j++)
 	{
-		for (j = 0; j <= 19)
+		for (i = 0; i <= 14; i++)
 		{
-			_putchar(numb[j]);
-			_putchar('');
+			if (i > 9)
+			{
+				_putchar(i / 10 + '0');
+			}
+
+			_putchar(i % 10 + '0');
 		}
 
 		_putchar('\n');
