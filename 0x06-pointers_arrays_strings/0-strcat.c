@@ -3,9 +3,9 @@
 #include "main.h"
 
 /**
- **_strcat - concantenate two strings
- *@*dest: First string
- *@*src: Second string
+ *_strcat - concantenate two strings
+ *@dest: First string
+ *@src: Second string
  *Return: concatinated string
  */
 
@@ -17,7 +17,7 @@ char *_strcat(char *dest, char *src)
 	int size_1 = *(&dest + 1) - dest;
 	int size_2 = *(&src + 1) - src;
 
-	for (i = 0; i <= size_1 - 1; i++ )
+	for (i = 0; i <= size_1 - 1; i++)
 	{
 		cat_str[i] = dest[i];
 	}
