@@ -18,10 +18,13 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	int result = 1;
+	int result;
+	int num1;
+	int num2;
 
-
-	result = atoi(argv[1]) * atoi(argv[2]);
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[2]);
+	result = num1 * num2;
 	printf("%d\n", result);
 
 	return (0);
