@@ -29,7 +29,7 @@ char *_strdup(char *str)
 
 	str_copy = (char *) malloc(str_len * sizeof(char));
 
-	for (str_val = 0; str_val <= str_len; str_val++)
+	for (str_val = 0; str_val < str_len; str_val++)
 	{
 		str_copy[str_val] = str[str_val];
 	}
