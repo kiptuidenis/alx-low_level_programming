@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "main.h"
+#include <stddef.h>
+
+
+/**
+ *_strdup - duplicates a given string
+ *@str: size of array
+ *Return: A pointer to the string
+ */
+
+char *_strdup(char *str)
+{
+	str = (char *) malloc()
+}
