@@ -21,6 +21,5 @@ printf("[0] (nil)\n");
 count++;
 h = h->next;
 }
-
-    return count;
+return (count);
 }
