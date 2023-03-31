@@ -22,5 +22,6 @@ size_t print_list(const list_t *h);
 int _putchar(char c);
 size_t list_len(const list_t *h);
 #include "0-print_list.c"
+#include "1-list_len.c"
 
 #endif
