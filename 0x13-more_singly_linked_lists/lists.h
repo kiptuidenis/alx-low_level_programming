@@ -30,6 +30,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 int delete_nodeint_at_index(listint_t **head, unsigned int index);
 listint_t *reverse_listint(listint_t **head);
 size_t print_listint_safe(const listint_t *head);
+size_t free_listint_safe(listint_t **h);
 
 #include "0-print_listint.c"
 #include "1-listint_len.c"
@@ -44,6 +45,7 @@ size_t print_listint_safe(const listint_t *head);
 #include "10-delete_nodeint.c"
 #include "100-reverse_listint.c"
 #include "101-print_listint_safe.c"
+#include "102-free_listint_safe.c"
 
 
 #endif
