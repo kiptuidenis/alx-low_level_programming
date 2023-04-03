@@ -25,7 +25,7 @@ void free_listint_t(listint_t *head);
 void free_listint2(listint_t **head);
 int pop_listint(listint_t **head);
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
-
+int sum_listint(listint_t *head);
 
 #include "0-print_listint.c"
 #include "1-listint_len.c"
@@ -35,5 +35,6 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
 #include "5-free_listint2.c"
 #include "6-pop_listint.c"
 #include "7-get_nodeint.c"
+#include "8-sum_listint.c"
 
 #endif
