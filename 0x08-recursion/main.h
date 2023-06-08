@@ -1,9 +1,10 @@
 int _putchar(char c);
 void _puts_recursion(char *s);
+int _strlen_recursion(char *s);
 
-/*#include <unistd.h>
+/**
+ *#include <unistd.h>
 
-**
  * _putchar - writes the character c to stdout
  * @c: The character to print
  *
@@ -13,4 +14,5 @@ void _puts_recursion(char *s);
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
-}*/
+}
+*/
