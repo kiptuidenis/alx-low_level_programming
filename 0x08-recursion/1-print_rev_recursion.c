@@ -16,10 +16,3 @@ void _print_rev_recursion(char *s)
 
 	_putchar(*s);
 }
-
-int main(void)
-{
-	_print_rev_recursion("blue");
-
-	return (0);
-}
