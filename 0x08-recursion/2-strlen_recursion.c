@@ -17,11 +17,3 @@ int _strlen_recursion(char *s)
 		return (1 + _strlen_recursion(s + 1));
 	}
 }
-
-int main(void)
-{
-	int len = _strlen_recursion("I am done");
-	printf("%d\n", len);
-
-	return (0);
-}
