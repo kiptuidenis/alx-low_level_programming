@@ -32,26 +32,31 @@ char *str_concat(char *s1, char *s2)
 	char *concat;
 	int j = 0;
 
+	if (s1 == NULL)
+	{
+		s1 = (char *)malloc(sizeof(char) + 1);
+		s1[1] = '\0';
+	}
+	if (s2 == NULL)
+	{
+		s2 = (char *)malloc(sizeof(char) + 1);
+		s2[1] = '\0';
+	}
 	size1 = _strlen(s1);
 	size2 = _strlen(s2);
 
-	if (s1 == NULL)
-		size1 = 1;
-	if (s2 == NULL)
-		size2 = 1;
-
-	tot_size = size1 + size2;
+	tot_size = size1 + size2 + 1;
 
 	concat = malloc(tot_size * sizeof(char));
 	if (concat == NULL)
 		return (NULL);
 
-	for (i = 0; i <= tot_size; i++)
+	for (i = 0; i <= tot_size - 1; i++)
 	{
-		if (i == tot_size)
+		if (i == tot_size - 1)
 			concat[i] = '\0';
 
-		if (i >= size1 && i < tot_size)
+		if (i >= size1 && i < tot_size - 1)
 		{
 			concat[i] = s2[j];
 			j++;
