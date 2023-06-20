@@ -29,7 +29,7 @@ char *check_if_null(char *str)
 {
 	if (str == NULL)
 	{
-		str = (char *)malloc(sizeof(char) + 1);
+		str = malloc(sizeof(char) + 1);
 		str[1] = '\0';
 		return (str);
 	}
