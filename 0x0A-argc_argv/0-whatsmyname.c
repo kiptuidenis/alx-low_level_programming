@@ -3,6 +3,8 @@
 
 /**
  *main - prints the name of file
+ *@argc: argument count
+ *@argv: array containing strings passed to the commandline
  *
  *Return: 0 on Success
  */
