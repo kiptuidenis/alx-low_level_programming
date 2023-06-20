@@ -19,12 +19,35 @@ int _strlen(char *str)
 }
 
 /**
- *str_concat - concatenates two strings
+ *check_null - checks if string is null
+ *@str: string to be checked
+ *
+ *Return: checked string
+ */
+
+char *check_null(char *str)
+{
+	if (str == NULL)
+	{
+		str = (char *)malloc(sizeof(char) + 1);
+		str[1] = '\0';
+		return (str);
+	}
+
+	return (str);
+}
+
+
+/**
+ *string_nconcat - concatenates two strings
  *@s1: string 1
  *@s2: string 2
+ *@n: size of s2 that is to be concatenated with s1
  *
  *Return: pointer to concatenated string
  */
+
+
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
@@ -32,16 +55,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *concat;
 	int j = 0;
 
-	if (s1 == NULL)
-	{
-		s1 = (char *)malloc(sizeof(char) + 1);
-		s1[1] = '\0';
-	}
-	if (s2 == NULL)
-	{
-		s2 = (char *)malloc(sizeof(char) + 1);
-		s2[1] = '\0';
-	}
+	s1 = check_null(s1);
+	s2 = check_null(s2);
+
 	size1 = _strlen(s1);
 	size2 = _strlen(s2);
 
@@ -53,7 +69,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		tot_size = size1 + n + 1;
 	}
-
 	concat = malloc(tot_size * sizeof(char));
 	if (concat == NULL)
 		return (NULL);
@@ -71,7 +86,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		if (i < size1)
 			concat[i] = s1[i];
 	}
-
 	return (concat);
-
 }
