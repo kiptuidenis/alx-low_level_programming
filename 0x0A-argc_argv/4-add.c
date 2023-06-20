@@ -4,15 +4,20 @@
 #include <string.h>
 #include <limits.h>
 
-/**
- *handle_strtol_error - checks if arguments are integers
- *@input: inputs from the command line
- *@sum: results of the sum of inputs
- *@error_flag: checks for errors
- *
- */
+long parseNumber(const char *input, int *error_flag);
+void handleParsingError(const char *message, int *error_flag);
+void addToSum(long number, long *sum, int *error_flag);
+void printResult(long sum, int error_flag);
 
-void handle_strtol_error(const char *input, long *sum, int *error_flag)
+/**
+ * parseNumber - Parses a string input and converts it to a long number.
+ *
+ * @input: The string input to parse.
+ * @error_flag: A pointer to the error flag.
+ *
+ * Return: The parsed long number.
+ */
+long parseNumber(const char *input, int *error_flag)
 {
 	char *endptr;
 	long number;
@@ -21,45 +26,87 @@ void handle_strtol_error(const char *input, long *sum, int *error_flag)
 
 	number = strtol(input, &endptr, 10);
 
-	if (endptr == input)
+	if (endptr == input || *endptr != '\0')
 	{
-		printf("Error\n");
-		*error_flag = 1;
-	}
-	else if (*endptr != '\0')
-	{
-		printf("Error\n");
-		*error_flag = 1;
+		handleParsingError("Invalid number", error_flag);
+		return (0);
 	}
 	else if ((number == LONG_MIN || number == LONG_MAX) && errno == ERANGE)
 	{
-		printf("Error\n");
-		*error_flag = 1;
+		handleParsingError("Number out of range", error_flag);
+		return (0);
 	}
 	else if (number < 0)
 	{
-		printf("Error\n");
-		*error_flag = 1;
+		handleParsingError("Negative number not allowed", error_flag);
+		return (0);
 	}
-	else
+
+	return (number);
+}
+
+/**
+ * handleParsingError - Handles the error condition during number parsing.
+ *
+ * @message: The error message to print.
+ * @error_flag: A pointer to the error flag.
+ *
+ * This function prints the error message and sets
+ * the error flag to indicate an error.
+ */
+void handleParsingError(const char *message, int *error_flag)
+{
+	printf("%s\n", message);
+	*error_flag = 1;
+}
+
+/**
+ * addToSum - Adds a number to the sum if no error has occurred.
+ *
+ * @number: The number to add to the sum.
+ * @sum: A pointer to the sum variable.
+ * @error_flag: A pointer to the error flag.
+ *
+ * This function adds the number to the sum if no error has occurred.
+ */
+void addToSum(long number, long *sum, int *error_flag)
+{
+	if (!*error_flag)
 	{
 		*sum += number;
 	}
 }
 
 /**
+ * printResult - Prints the final result if no error has occurred.
+ *
+ * @sum: The final sum to print.
+ * @error_flag: The error flag indicating if an error occurred.
+ *
+ * If no error has occurred, this function prints the final sum.
+ */
+void printResult(long sum, int error_flag)
+{
+	if (!error_flag)
+	{
+		printf("%ld\n", sum);
+	}
+}
+
+/**
  *main - main function
  *@argc: argument count
- *@argv: strings passed
+ *@argv: string of arguments
  *
- *Return: 1 on failure, 0 on success
+ *Return: 0 on success, 1 on failure
  */
 
 int main(int argc, char *argv[])
 {
-	int i;
 	long sum = 0;
 	int error_flag = 0;
+	int i;
+	long number;
 
 	if (argc == 1)
 	{
@@ -69,11 +116,15 @@ int main(int argc, char *argv[])
 
 	for (i = 1; i < argc; i++)
 	{
-		handle_strtol_error(argv[i], &sum, &error_flag);
+		number = parseNumber(argv[i], &error_flag);
+		addToSum(number, &sum, &error_flag);
 		if (error_flag)
+		{
 			return (1);
+		}
 	}
 
-	printf("%ld\n", sum);
+	printResult(sum, error_flag);
 	return (0);
 }
+
