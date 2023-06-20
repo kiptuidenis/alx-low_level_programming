@@ -19,13 +19,13 @@ int _strlen(char *str)
 }
 
 /**
- *check_null - checks if string is null
+ *check_if_null - checks if string is null
  *@str: string to be checked
  *
  *Return: checked string
  */
 
-char *check_null(char *str)
+char *check_if_null(char *str)
 {
 	if (str == NULL)
 	{
@@ -47,16 +47,14 @@ char *check_null(char *str)
  *Return: pointer to concatenated string
  */
 
-
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int size1, size2, tot_size, i;
 	char *concat;
 	int j = 0;
 
-	s1 = check_null(s1);
-	s2 = check_null(s2);
+	s1 = check_if_null(s1);
+	s2 = check_if_null(s2);
 
 	size1 = _strlen(s1);
 	size2 = _strlen(s2);
@@ -69,7 +67,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		tot_size = size1 + n + 1;
 	}
-	concat = malloc(tot_size * sizeof(char));
+	concat = malloc(tot_size);
 	if (concat == NULL)
 		return (NULL);
 
