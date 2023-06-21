@@ -2,11 +2,6 @@
 #define CALC_H
 
 /**
- *Desc: Heade file that has structures and prototypes
- *
- */
-
-/**
  * struct op - Struct op
  *
  * @op: The operator
