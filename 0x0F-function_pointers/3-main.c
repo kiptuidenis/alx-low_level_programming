@@ -10,7 +10,7 @@
  *Return: 0 on success, otherwise Error
  */
 
-int main(int argc, char *argv[])
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	int result, a, b;
 	char *op;
@@ -26,6 +26,12 @@ int main(int argc, char *argv[])
 	b = atoi(argv[3]);
 	op = argv[2];
 
+	if (get_op_func(op) == NULL || op[1] != '\0')
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
 	if ((*op == '/' && num2 == 0)
 	    || (*op == '%' && num2 == 0))
 	{
@@ -34,15 +40,7 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 
-
-	if (get_op_func(argv[2]) == NULL || op[1] != '\0')
-	{
-		printf("Error\n");
-		exit(99);
-	}
-
-	result = get_op_func(op)(a, b);
-	printf("%d\n", result);
+	printf("%d\n", get_op_func(op)(a, b));
 
 	return (0);
 }
