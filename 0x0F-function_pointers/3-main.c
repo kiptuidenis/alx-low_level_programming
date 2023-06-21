@@ -13,7 +13,7 @@
 int main(int argc, char *argv[])
 {
 	int result, a, b;
-	int (*check)(int, int);
+	char *op;
 
 	if (argc != 4)
 	{
@@ -24,24 +24,24 @@ int main(int argc, char *argv[])
 
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
+	op = argv[2];
 
-	if (b == 0)
+	if ((*op == '/' && num2 == 0)
+	    || (*op == '%' && num2 == 0))
 	{
 		printf("Error\n");
 		printf("%d\n", 100);
 		exit(100);
 	}
 
-	check = get_op_func(argv[2]);
 
-	if (check == NULL)
+	if (get_op_func(argv[2]) == NULL || op[1] != '\0')
 	{
 		printf("Error\n");
-		printf("%d\n", 99);
 		exit(99);
 	}
 
-	result = check(a, b);
+	result = get_op_func(op)(a, b);
 	printf("%d\n", result);
 
 	return (0);
