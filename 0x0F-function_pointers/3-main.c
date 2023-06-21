@@ -12,13 +12,12 @@
 
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-	int result, a, b;
+	int  a, b;
 	char *op;
 
 	if (argc != 4)
 	{
 		printf("Error\n");
-		printf("%d\n", 98);
 		exit(98);
 	}
 
@@ -36,7 +35,6 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	    || (*op == '%' && num2 == 0))
 	{
 		printf("Error\n");
-		printf("%d\n", 100);
 		exit(100);
 	}
 
