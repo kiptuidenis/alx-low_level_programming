@@ -7,7 +7,6 @@
  *
  * @arg: A va_list containing the argument to be printed.
  *
- * Author: Silas Mugambi
  */
 void print_char(va_list arg)
 {
@@ -71,8 +70,9 @@ void print_string(va_list arg)
  * @format: A string containing format specifiers for each argument.
  * @...: A variable number of arguments to be printed.
  *
- * Description: Any argument not of type char, int, float, or char * is ignored.
- *              Arguments are separated by a comma and space.
+ * Description: Any argument not of type char, int,
+ * float, or char * is ignored.
+ * Arguments are separated by a comma and space.
  */
 void print_all(const char * const format, ...)
 {
