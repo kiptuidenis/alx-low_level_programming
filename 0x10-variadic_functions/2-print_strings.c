@@ -29,7 +29,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		{
 			if (strings == NULL)
 			{
-				printf("nil");
+				printf("nil%s", separator);
 				continue;
 			}
 			printf("%s%s", strings, separator);
@@ -39,7 +39,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		{
 			if (strings == NULL)
 			{
-				printf("nil");
+				printf("nil%s", separator);
 				continue;
 			}
 			printf("%s", strings);
