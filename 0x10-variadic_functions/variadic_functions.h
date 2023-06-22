@@ -1,6 +1,8 @@
 #ifndef VARIADIC_FUNCTIONS
 #define VARIADIC_FUNCTIONS
 
+#include <stdarg.h>
+
 /**
  * struct printer - A new struct type defining a printer.
  *
@@ -12,7 +14,6 @@
  *              `print_all` function to print any combination of data
  *              types specified in the format string. The symbol field
  *              is a character that represents the data type, and the
- *              print field is a function pointer to a function that
  *              takes a `va_list` argument and prints the corresponding
  *              data type.
  */
