@@ -20,34 +20,23 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		strings = va_arg(args, char *);
-		if (separator == NULL && strings == NULL)
-		{
-			printf("(nil)");
-			continue;
-		}
-		
-		if (separator == NULL)
-		{
-			printf("%s", strings);
-			continue;
-		}
-		if (i != n - 1)
-		{
-			if (strings == NULL)
-			{
-				printf("(nil)%s", separator);
-				continue;
-			}
-			printf("%s%s", strings, separator);
-			continue;
-		}
+
 		if (strings == NULL)
 		{
-			printf("(nil)%s", separator);
-			continue;
+			printf("(nil)");
 		}
-		printf("%s", strings);
+		else
+		{
+			printf("%s", strings);
+		}
+
+		if (separator != NULL && i != n - 1)
+		{
+			printf("%s", separator);
+		}
 	}
 
 	printf("\n");
+
+	va_end(args);
 }
