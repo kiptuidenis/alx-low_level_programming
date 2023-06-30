@@ -1,0 +1,25 @@
+#include "lists.h"
+#include <stdio.h>
+
+/**
+ *list_len - finds the number of elements in a list
+ *@h: head of the list
+ *
+ *Return: Number of elements in the list
+ */
+
+size_t list_len(const list_t *h)
+{
+	size_t num_of_elem = 0;
+	const list_t *temp;
+
+	temp = h;
+
+	while (temp != NULL)
+	{
+		temp = temp->next;
+		num_of_elem++;
+	}
+
+	return (num_of_elem);
+}
