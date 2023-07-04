@@ -18,7 +18,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	unsigned int list_size;
 	unsigned int i = 0;
 
-	list_size = size_listint(*head);
+	list_size = size_list(*head);
 	if (list_size == 0 || index >= list_size)
 		return (-1);
 
@@ -42,3 +42,28 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 	return (1);
 }
+
+/**
+ *size_list - prints all elements of a list
+ *@h: head of the list
+ *
+ *Return: the number of nodes
+ *
+ */
+
+unsigned int size_list(listint_t *h)
+{
+	unsigned int num_of_nodes = 0;
+	listint_t *temp = h;
+
+	if (h == NULL)
+		return (0);
+	while (temp !=  NULL)
+	{
+		temp = temp->next;
+		num_of_nodes++;
+	}
+
+	return (num_of_nodes);
+}
+

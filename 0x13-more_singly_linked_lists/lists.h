@@ -30,6 +30,6 @@ unsigned int size_listint(listint_t *h);
 listint_t *add_node_head(listint_t **head, int n);
 listint_t *add_node_end(listint_t **head, int n);
 int delete_nodeint_at_index(listint_t **head, unsigned int index);
-
+unsigned int size_list(listint_t *h);
 
 #endif
