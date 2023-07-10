@@ -35,6 +35,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (bytes_read == -1)
 	{
 		close(file_dcrpt);
+		free(buffer);
 		return (-1);
 	}
 
@@ -42,6 +43,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (bytes_printed != bytes_read)
 	{
 		close(file_dcrpt);
+		free(buffer);
 		return (0);
 	}
 
