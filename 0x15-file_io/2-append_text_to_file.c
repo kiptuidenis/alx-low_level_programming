@@ -32,7 +32,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (file_descrpt == -1)
 		return (-1);
 
-	bytes_appended = write(file_descrpt, filename, content_size);
+	bytes_appended = write(file_descrpt, text_content, content_size);
 	if (bytes_appended == -1)
 	{
 		close(file_descrpt);
