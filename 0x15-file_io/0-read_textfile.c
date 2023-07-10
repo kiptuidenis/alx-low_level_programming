@@ -15,7 +15,7 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int file_dcrpt;
+	int file_descrpt;
 	char *buffer;
 	ssize_t bytes_printed;
 	ssize_t bytes_read;
@@ -23,18 +23,18 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 
-	file_dcrpt = open(filename, O_RDONLY);
-	if (file_dcrpt == -1)
+	file_descrpt = open(filename, O_RDONLY);
+	if (file_descrpt == -1)
 		return (0);
 	buffer = malloc(letters);
 
 	if (buffer == NULL)
 		return (0);
 
-	bytes_read = read(file_dcrpt, buffer, letters);
+	bytes_read = read(file_descrpt, buffer, letters);
 	if (bytes_read == -1)
 	{
-		close(file_dcrpt);
+		close(file_descrpt);
 		free(buffer);
 		return (-1);
 	}
@@ -42,12 +42,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	bytes_printed = write(STDOUT_FILENO, buffer, bytes_read);
 	if (bytes_printed != bytes_read)
 	{
-		close(file_dcrpt);
+		close(file_descrpt);
 		free(buffer);
 		return (0);
 	}
 
-	close(file_dcrpt);
+	close(file_descrpt);
 	free(buffer);
 	return (bytes_printed);
 }
