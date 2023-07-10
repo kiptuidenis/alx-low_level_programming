@@ -15,7 +15,7 @@
 int create_file(const char *filename, char *text_content)
 {
 	int file_descrpt;
-	size_t data_size;
+	size_t content_size;
 	ssize_t bytes_written;
 
 	if (filename == NULL)
@@ -25,14 +25,14 @@ int create_file(const char *filename, char *text_content)
 		text_content = "";
 	}
 
-	data_size = strlen(text_content);
+	content_size = strlen(text_content);
 
 	file_descrpt = open(filename, O_WRONLY | O_CREAT | O_TRUNC,
 			    S_IRUSR | S_IWUSR);
 	if (file_descrpt == -1)
 		return (-1);
 
-	bytes_written = write(file_descrpt, text_content, data_size);
+	bytes_written = write(file_descrpt, text_content, content_size);
 	if (bytes_written == -1)
 	{
 		close(file_descrpt);
