@@ -58,6 +58,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	size1 = _strlen(s1);
 	size2 = _strlen(s2);
+	
+	printf("the value of n is: %d\n", n);
 
 	if (n >= size2)
 	{
@@ -67,6 +69,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		tot_size = size1 + n + 1;
 	}
+	printf ("The totalsize is: %d\n", tot_size);
 	concat = malloc(tot_size);
 	if (concat == NULL)
 		return (NULL);
