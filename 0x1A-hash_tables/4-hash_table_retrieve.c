@@ -23,7 +23,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
     index = key_index((const unsigned char *)key, ht->size);
     temp = ht->array[index];
 
-    while (temp)
+    while (temp->next)
     {
         if (strcmp(temp->key, key) == 0)
         {
