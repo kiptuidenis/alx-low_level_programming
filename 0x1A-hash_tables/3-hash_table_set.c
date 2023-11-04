@@ -20,37 +20,46 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value) {
     index = key_index((const unsigned char *)key, ht->size);
     current = ht->array[index];
 
+    /*1. Checks if an index is occupied
+     *2. If it is occupied, it traverses the list cheking if key already exists
+     *3. If key exists, it updates the value corresponding to key and returns 1
+     *4. Breaks out of loop if key does not exist
+    */
     while (current != NULL) {
         if (strcmp(current->key, key) == 0) {
             char *new_value = strdup(value);
             if (new_value == NULL)
-                return 0;
+                return (0);
 
-            free(current->value);
             current->value = new_value;
-            return 1;
+            return (1);
         }
         current = current->next;
     }
 
+    /*Create a new node to store key value pair*/
     new_node = malloc(sizeof(hash_node_t));
     if (new_node == NULL)
-        return 0;
+        return (0);
 
+    /*Copies  Key to newly created node(new_node->key)*/
     new_node->key = strdup(key);
     if (new_node->key == NULL) {
+        free(new_node->key);
         free(new_node);
-        return 0;
+        return (0);
     }
     
+    /*Copies Value to newly created node*/
     new_node->value = strdup(value);
     if (new_node->value == NULL) {
         free(new_node->key);
         free(new_node);
-        return 0;
+        return (0);
     }
 
+    /*Insert new node at the beginning of the list*/
     new_node->next = ht->array[index];
     ht->array[index] = new_node;
-    return 1;
+    return (1);
 }
