@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Finds The perimeter of island"""
 
 def island_perimeter(grid):
     """Finds The perimeter"""
@@ -9,12 +10,11 @@ def island_perimeter(grid):
     for i in range(rows):
         for j in range(cols):
             if grid[i][j] == 1:
-                perimeter += 4  # Each land cell contributes 4 sides to the perimeter
+                perimeter += 4
                 
-                # Check adjacent cells (up, down, left, right)
                 if i > 0 and grid[i - 1][j] == 1:
-                    perimeter -= 2  # Subtract 2 for each adjacent land cell
+                    perimeter -= 2 
                 if j > 0 and grid[i][j - 1] == 1:
-                    perimeter -= 2  # Subtract 2 for each adjacent land cell
+                    perimeter -= 2
                     
     return perimeter
