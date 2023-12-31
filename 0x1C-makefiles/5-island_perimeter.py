@@ -10,7 +10,7 @@ def island_perimeter(grid):
         int: Perimeter of Island
     """
     perim = 0
-    rows, cols = len(grid), len(grid[0]) if grid else 0  # Get the dimensions of the grid
+    rows, cols = len(grid), len(grid[0]) if grid else 0  
 
     def is_valid(x, y):
         """ Helper function to check valid neighboring cells
