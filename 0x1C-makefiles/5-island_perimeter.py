@@ -8,6 +8,8 @@ def island_perimeter(grid):
     Args:
         grid (list): List of integers
     """
+    if len(grid) > 100:
+        return
     perim = 0
     for i in range(len(grid)):
         for j in range(len(grid[i])):
