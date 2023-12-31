@@ -45,6 +45,7 @@ def island_perimeter(grid):
             total_perim += square_perim
             if square_perim == 3:
                 check_lake += 1
+            square_perim = 0
     if check_lake < 2:
-        return "Check Lake"
+        return
     return total_perim
