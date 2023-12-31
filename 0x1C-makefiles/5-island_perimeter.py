@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Finds the perimeter of an island"""
 
 def island_perimeter(grid):
     """Finds the perimeter of Island
