@@ -1,36 +1,17 @@
-#!/usr/bin/python3
-"""Finds the perimeter of an island"""
-
 def island_perimeter(grid):
-    """Finds the perimeter of Island
-
-    Args:
-        grid (list): list of lists of integers
-
-    Returns:
-        int: Perimeter of Island
-    """
-    perim = 0
-    rows, cols = len(grid), len(grid[0]) if grid else 0  
-
-    def is_valid(x, y):
-        """ Helper function to check valid neighboring cells
-
-        Args:
-            x (_type_): _description_
-            y (_type_): _description_
-
-        Returns:
-            _type_: _description_
-        """
-        return 0 <= x < rows and 0 <= y < cols
+    perimeter = 0
+    rows = len(grid)
+    cols = len(grid[0])
 
     for i in range(rows):
         for j in range(cols):
             if grid[i][j] == 1:
-                neighbors = [(i - 1, j), (i, j - 1), (i, j + 1), (i + 1, j)]
-                for x, y in neighbors:
-                    if not is_valid(x, y) or grid[x][y] == 0:
-                        perim += 1
-
-    return perim
+                perimeter += 4  # Each land cell contributes 4 sides to the perimeter
+                
+                # Check adjacent cells (up, down, left, right)
+                if i > 0 and grid[i - 1][j] == 1:
+                    perimeter -= 2  # Subtract 2 for each adjacent land cell
+                if j > 0 and grid[i][j - 1] == 1:
+                    perimeter -= 2  # Subtract 2 for each adjacent land cell
+                    
+    return perimeter
